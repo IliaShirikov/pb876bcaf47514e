@@ -575,9 +575,8 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 
 /* REELS */
 .reels-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:60px}
-.reel-featured,.reel-secondary{display:flex;flex-direction:column;align-items:center;gap:28px}
+.reel-item{display:flex;flex-direction:column;align-items:center;gap:0}
 .phone-frame{position:relative;width:260px;aspect-ratio:9/19.5;background:#111;border-radius:40px;box-shadow:0 0 0 8px #1a1a2e,0 0 0 10px rgba(255,255,255,.08),0 40px 80px rgba(0,0,0,.6);overflow:hidden;flex-shrink:0}
-.phone-sm{width:220px;border-radius:34px}
 .phone-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:60px;height:8px;background:#0a0a0a;border-radius:8px;z-index:10}
 .reel-badge{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);backdrop-filter:blur(8px);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.04em}
 .reel-caption{text-align:center}
@@ -587,7 +586,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 .unmute-btn.active svg path+path{display:none}
 .unmute-lg{font-size:14px;padding:11px 24px;background:rgba(255,107,26,.15);border-color:rgba(255,107,26,.35);color:var(--o)}
 .unmute-lg:hover{background:rgba(255,107,26,.25);color:var(--o)}
-@media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:220px}.phone-sm{width:190px}}
+@media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:220px}}
 </style>
 </head>
 <body>
@@ -840,42 +839,36 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
     <h2 class="section-h r" style="color:#fff">Не описание вакансии —<br><span style="color:var(--o)">настоящая жизнь</span></h2>
     <p class="section-sub r" style="color:rgba(255,255,255,.6)">Снято внутри компании. Без режиссуры.</p>
     <div class="reels-wrap r">
-      <!-- Reel 1: featured, larger -->
-      <div class="reel-featured">
+      <div class="reel-item">
         <div class="phone-frame">
           <div class="phone-notch"></div>
-          <video src="reel1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:36px"></video>
+          <video id="vid1" src="reel1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:36px"></video>
           <div class="reel-badge">● Жизнь команды</div>
         </div>
         <div class="reel-caption">
           <div style="font-size:13px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Главный рилс</div>
-          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.3">Один день в AXENIX.<br>Настоящий.</div>
+          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px">Один день в AXENIX.<br>Настоящий.</div>
+          <button class="unmute-btn" id="ubtn1" onclick="toggleVid('vid1','ubtn1')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            Звук выкл
+          </button>
         </div>
       </div>
-      <!-- Reel 2: secondary -->
-      <div class="reel-secondary">
-        <div class="phone-frame phone-sm">
+      <div class="reel-item">
+        <div class="phone-frame">
           <div class="phone-notch"></div>
-          <video src="reel2.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:30px"></video>
+          <video id="vid2" src="reel2.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:36px"></video>
           <div class="reel-badge">● Команда</div>
         </div>
-        <div class="reel-caption" style="margin-top:20px">
-          <div style="font-size:13px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">О нас</div>
-          <div style="font-size:16px;font-weight:600;color:#fff;line-height:1.3">Люди, с которыми<br>ты будешь работать</div>
+        <div class="reel-caption">
+          <div style="font-size:13px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">О нас</div>
+          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px">Люди, с которыми<br>ты будешь работать</div>
+          <button class="unmute-btn" id="ubtn2" onclick="toggleVid('vid2','ubtn2')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            Звук выкл
+          </button>
         </div>
-        <!-- unmute button -->
-        <button class="unmute-btn" onclick="toggleMute(this)" data-target="reel2.mp4" aria-label="Включить звук">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-          Звук выкл
-        </button>
       </div>
-    </div>
-    <!-- global unmute for reel1 -->
-    <div style="text-align:center;margin-top:32px">
-      <button class="unmute-btn unmute-lg" id="unmute1" onclick="toggleMute1()" aria-label="Включить звук главного видео">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-        Включить звук
-      </button>
     </div>
   </div>
 </section>
@@ -1129,17 +1122,14 @@ form.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('
 </script>
 
 <script>
-var vid1 = null;
-function toggleMute1(){
-  if(!vid1) vid1 = document.querySelector('#life video');
-  if(!vid1) return;
-  vid1.muted = !vid1.muted;
-  var btn = document.getElementById('unmute1');
-  if(btn){
-    btn.innerHTML = vid1.muted
-      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Включить звук'
-      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Выключить звук';
-  }
+function toggleVid(vidId, btnId){
+  var v=document.getElementById(vidId);
+  var b=document.getElementById(btnId);
+  if(!v||!b) return;
+  v.muted=!v.muted;
+  var muted='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Звук выкл';
+  var unmuted='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Звук вкл';
+  b.innerHTML=v.muted?muted:unmuted;
 }
 </script>
 </body>
