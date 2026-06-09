@@ -3,40 +3,38 @@
 <head>
 <script>
 (function(){
-  // SHA-256 hash of password "axenix2026" — change password by updating this hash
-  const HASH = "44a1f179cded5aa5b520ff831814e7f9b33047e5654ab829525d950fd5cfadb2";
-  const KEY = "axenix_auth";
-  if(sessionStorage.getItem(KEY)==="1") return;
-  async function check(pw){
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pw));
-    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
-  }
-  const overlay = document.createElement("div");
-  overlay.style.cssText="position:fixed;inset:0;background:#F4F2EE;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:'Onest',sans-serif";
-  overlay.innerHTML=`<div style="text-align:center;padding:40px;max-width:360px;width:100%">
-    <div style="font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:#0D0D0D;margin-bottom:4px;letter-spacing:-.03em">AXENIX<span style="color:#FF6B1A">.</span></div>
-    <div style="font-size:13px;color:#7A786F;margin-bottom:32px">Введи пароль для доступа</div>
-    <input id="pw-input" type="password" placeholder="Пароль" style="width:100%;padding:14px 18px;border:1.5px solid #DDD9D0;border-radius:12px;font-size:15px;outline:none;font-family:inherit;background:#fff;box-sizing:border-box;margin-bottom:12px">
-    <button id="pw-btn" style="width:100%;padding:14px;background:#0D0D0D;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">Войти</button>
-    <div id="pw-err" style="color:#e03;font-size:13px;margin-top:10px;min-height:18px"></div>
-  </div>`;
-  document.documentElement.appendChild(overlay);
+  var KEY="axenix_auth";
+  if(sessionStorage.getItem(KEY)==="ok") return;
+  var ov=document.createElement("div");
+  ov.id="pw-ov";
+  ov.style.cssText="position:fixed;inset:0;background:#F4F2EE;z-index:99999;display:flex;align-items:center;justify-content:center";
+  ov.innerHTML='<div style="text-align:center;padding:40px;max-width:360px;width:100%">'
+    +'<div style="font-size:22px;font-weight:900;color:#0D0D0D;margin-bottom:4px;letter-spacing:-.03em">AXENIX<span style="color:#FF6B1A">.</span></div>'
+    +'<div style="font-size:13px;color:#7A786F;margin-bottom:28px">Введите пароль для доступа</div>'
+    +'<input id="pwi" type="password" placeholder="Пароль" style="display:block;width:100%;padding:14px 18px;border:1.5px solid #DDD9D0;border-radius:12px;font-size:15px;outline:none;background:#fff;box-sizing:border-box;margin-bottom:12px">'
+    +'<button id="pwb" style="width:100%;padding:14px;background:#0D0D0D;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer">Войти</button>'
+    +'<div id="pwe" style="color:#e03;font-size:13px;margin-top:10px;min-height:18px"></div>'
+    +'</div>';
+  document.documentElement.appendChild(ov);
   document.documentElement.style.overflow="hidden";
-  async function attempt(){
-    const pw = document.getElementById("pw-input").value;
-    const h = await check(pw);
-    if(h===HASH){
-      sessionStorage.setItem(KEY,"1");
-      overlay.remove();
+  function attempt(){
+    var pw=document.getElementById("pwi").value;
+    var encoded=btoa(unescape(encodeURIComponent(pw)));
+    if(encoded==="YXhlbml4MjAyNg=="){
+      sessionStorage.setItem(KEY,"ok");
+      document.getElementById("pw-ov").remove();
       document.documentElement.style.overflow="";
     } else {
-      document.getElementById("pw-err").textContent="Неверный пароль";
-      document.getElementById("pw-input").style.borderColor="#e03";
+      document.getElementById("pwe").textContent="Неверный пароль";
+      document.getElementById("pwi").style.borderColor="#e03";
     }
   }
-  document.getElementById("pw-btn").onclick = attempt;
-  document.getElementById("pw-input").addEventListener("keydown", e=>{ if(e.key==="Enter") attempt(); });
-  document.getElementById("pw-input").addEventListener("input", ()=>{ document.getElementById("pw-err").textContent=""; document.getElementById("pw-input").style.borderColor="#DDD9D0"; });
+  document.getElementById("pwb").onclick=attempt;
+  document.getElementById("pwi").onkeydown=function(e){if(e.key==="Enter")attempt();};
+  document.getElementById("pwi").oninput=function(){
+    document.getElementById("pwe").textContent="";
+    document.getElementById("pwi").style.borderColor="#DDD9D0";
+  };
 })();
 </script>
 <meta charset="UTF-8">
@@ -1021,7 +1019,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
   </div>
 </footer>
 
-<script>
+(REPLACED)
 /* NAV */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));
