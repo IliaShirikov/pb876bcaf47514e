@@ -265,23 +265,33 @@ section{padding:100px 40px;position:relative}
 .track-more-btn{display:inline-flex;align-items:center;gap:8px;background:var(--o);color:#fff;padding:11px 20px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s}
 .track-more-btn:hover{background:#e85c08}
 .track-right{background:var(--white);padding:0}
-.career-path{display:flex;flex-direction:column}
+.career-path{display:flex;flex-direction:column;position:relative;padding:8px 0}
+/* vertical connecting line */
+.career-path::before{content:'';position:absolute;left:44px;top:52px;bottom:52px;width:1px;background:linear-gradient(to bottom,var(--o) 0%,var(--border) 60%);z-index:0}
 .path-step{
-  display:grid;grid-template-columns:56px 1fr;gap:0;
-  border-bottom:1px solid var(--border);
-  transition:background .2s;cursor:default;
+  display:grid;grid-template-columns:88px 1fr;gap:0;
+  position:relative;cursor:default;
+  transition:background .18s,box-shadow .18s;
 }
-.path-step:last-child{border-bottom:none}
-.path-step:hover{background:var(--bg)}
+.path-step:not(:last-child) .path-content{border-bottom:1px solid var(--border)}
+.path-step:hover,.path-step:active{background:rgba(27,45,79,.04)}
+.path-step:hover .path-dot,.path-step:active .path-dot{border-color:var(--o);color:var(--o);background:var(--o2);transform:scale(1.1)}
 .path-idx{
-  font-family:var(--fh);font-size:11px;font-weight:700;color:var(--dim);
-  padding:24px 0 24px 24px;letter-spacing:.08em;
-  border-right:1px solid var(--border);display:flex;align-items:flex-start;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding-top:22px;position:relative;z-index:1;
 }
-.path-content{padding:24px 28px}
-.path-role{font-family:var(--fh);font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px;letter-spacing:-.01em}
-.path-time{font-size:12px;color:var(--o);font-weight:600;margin-bottom:6px}
-.path-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.path-dot{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--white);border:1.5px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fh);font-size:10px;font-weight:700;color:var(--muted);
+  letter-spacing:.04em;transition:all .2s;flex-shrink:0;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+}
+.path-content{padding:20px 28px 20px 4px}
+.path-role{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px;letter-spacing:-.02em}
+.path-time{font-size:12px;color:var(--o);font-weight:700;margin-bottom:7px;letter-spacing:.01em}
+.path-desc{font-size:13px;color:var(--muted);line-height:1.7}
 
 /* ── VOICES — MAGAZINE ── */
 #voices{background:var(--white)}
@@ -750,11 +760,11 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
         </div>
         <div class="track-right">
           <div class="career-path">
-            <div class="path-step"><div class="path-idx">01</div><div class="path-content"><div class="path-role">Стажёр-аналитик</div><div class="path-time">3 месяца</div><div class="path-desc">Реальный проект с первого дня. Исследования, структурирование данных, материалы для клиента.</div></div></div>
-            <div class="path-step"><div class="path-idx">02</div><div class="path-content"><div class="path-role">Аналитик</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Ведёшь рабочие потоки, взаимодействуешь с клиентом. Развиваешь отраслевую экспертизу.</div></div></div>
-            <div class="path-step"><div class="path-idx">03</div><div class="path-content"><div class="path-role">Старший аналитик</div><div class="path-time">12–18 месяцев</div><div class="path-desc">Руководишь рабочими группами, структурируешь решения, менторишь аналитиков.</div></div></div>
-            <div class="path-step"><div class="path-idx">04</div><div class="path-content"><div class="path-role">Консультант</div><div class="path-time">2–3 года</div><div class="path-desc">Управляешь проектными потоками, отвечаешь за результат. Строишь отношения с клиентом.</div></div></div>
-            <div class="path-step"><div class="path-idx">05</div><div class="path-content"><div class="path-role">Менеджер / Партнёр</div><div class="path-time">4–6 лет</div><div class="path-desc">Руководишь проектами и командой. Отвечаешь за P&L и развитие клиентских отношений.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">01</span></div><div class="path-content"><div class="path-role">Стажёр-аналитик</div><div class="path-time">3 месяца</div><div class="path-desc">Реальный проект с первого дня. Исследования, структурирование данных, материалы для клиента.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">02</span></div><div class="path-content"><div class="path-role">Аналитик</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Ведёшь рабочие потоки, взаимодействуешь с клиентом. Развиваешь отраслевую экспертизу.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">03</span></div><div class="path-content"><div class="path-role">Старший аналитик</div><div class="path-time">12–18 месяцев</div><div class="path-desc">Руководишь рабочими группами, структурируешь решения, менторишь аналитиков.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">04</span></div><div class="path-content"><div class="path-role">Консультант</div><div class="path-time">2–3 года</div><div class="path-desc">Управляешь проектными потоками, отвечаешь за результат. Строишь отношения с клиентом.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">05</span></div><div class="path-content"><div class="path-role">Менеджер / Партнёр</div><div class="path-time">4–6 лет</div><div class="path-desc">Руководишь проектами и командой. Отвечаешь за P&L и развитие клиентских отношений.</div></div></div>
           </div>
         </div>
       </div>
@@ -769,11 +779,11 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
         </div>
         <div class="track-right">
           <div class="career-path">
-            <div class="path-step"><div class="path-idx">01</div><div class="path-content"><div class="path-role">Стажёр-разработчик</div><div class="path-time">3 месяца</div><div class="path-desc">Работаешь в команде над реальным техническим треком. Твой код идёт в прод.</div></div></div>
-            <div class="path-step"><div class="path-idx">02</div><div class="path-content"><div class="path-role">Младший специалист</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Разрабатываешь и тестируешь компоненты. Участвуешь в архитектурных обсуждениях.</div></div></div>
-            <div class="path-step"><div class="path-idx">03</div><div class="path-content"><div class="path-role">Специалист</div><div class="path-time">1–2 года</div><div class="path-desc">Ведёшь технический трек проекта, проектируешь решения, взаимодействуешь с IT клиента.</div></div></div>
-            <div class="path-step"><div class="path-idx">04</div><div class="path-content"><div class="path-role">Старший специалист</div><div class="path-time">2–4 года</div><div class="path-desc">Отвечаешь за архитектуру, менторишь команду, участвуешь в пресейле.</div></div></div>
-            <div class="path-step"><div class="path-idx">05</div><div class="path-content"><div class="path-role">Архитектор / TechLead</div><div class="path-time">5+ лет</div><div class="path-desc">Определяешь технологическую стратегию, формируешь практику компании.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">01</span></div><div class="path-content"><div class="path-role">Стажёр-разработчик</div><div class="path-time">3 месяца</div><div class="path-desc">Работаешь в команде над реальным техническим треком. Твой код идёт в прод.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">02</span></div><div class="path-content"><div class="path-role">Младший специалист</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Разрабатываешь и тестируешь компоненты. Участвуешь в архитектурных обсуждениях.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">03</span></div><div class="path-content"><div class="path-role">Специалист</div><div class="path-time">1–2 года</div><div class="path-desc">Ведёшь технический трек проекта, проектируешь решения, взаимодействуешь с IT клиента.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">04</span></div><div class="path-content"><div class="path-role">Старший специалист</div><div class="path-time">2–4 года</div><div class="path-desc">Отвечаешь за архитектуру, менторишь команду, участвуешь в пресейле.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">05</span></div><div class="path-content"><div class="path-role">Архитектор / TechLead</div><div class="path-time">5+ лет</div><div class="path-desc">Определяешь технологическую стратегию, формируешь практику компании.</div></div></div>
           </div>
         </div>
       </div>
@@ -788,11 +798,11 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
         </div>
         <div class="track-right">
           <div class="career-path">
-            <div class="path-step"><div class="path-idx">01</div><div class="path-content"><div class="path-role">Стажёр-аналитик данных</div><div class="path-time">3 месяца</div><div class="path-desc">Сбор данных, первичная аналитика, визуализация для клиента.</div></div></div>
-            <div class="path-step"><div class="path-idx">02</div><div class="path-content"><div class="path-role">Аналитик данных</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Строишь дашборды, пишешь SQL, формируешь инсайты для принятия решений.</div></div></div>
-            <div class="path-step"><div class="path-idx">03</div><div class="path-content"><div class="path-role">Старший аналитик / DS</div><div class="path-time">1–2 года</div><div class="path-desc">Проектируешь ML-модели и data pipelines. Отвечаешь за качество аналитики.</div></div></div>
-            <div class="path-step"><div class="path-idx">04</div><div class="path-content"><div class="path-role">Lead Data Scientist</div><div class="path-time">2–4 года</div><div class="path-desc">Руководишь командой, определяешь методологию и архитектуру данных.</div></div></div>
-            <div class="path-step"><div class="path-idx">05</div><div class="path-content"><div class="path-role">CDO / Партнёр</div><div class="path-time">5+ лет</div><div class="path-desc">Формируешь data-стратегию компании и клиентов.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">01</span></div><div class="path-content"><div class="path-role">Стажёр-аналитик данных</div><div class="path-time">3 месяца</div><div class="path-desc">Сбор данных, первичная аналитика, визуализация для клиента.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">02</span></div><div class="path-content"><div class="path-role">Аналитик данных</div><div class="path-time">6–12 месяцев</div><div class="path-desc">Строишь дашборды, пишешь SQL, формируешь инсайты для принятия решений.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">03</span></div><div class="path-content"><div class="path-role">Старший аналитик / DS</div><div class="path-time">1–2 года</div><div class="path-desc">Проектируешь ML-модели и data pipelines. Отвечаешь за качество аналитики.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">04</span></div><div class="path-content"><div class="path-role">Lead Data Scientist</div><div class="path-time">2–4 года</div><div class="path-desc">Руководишь командой, определяешь методологию и архитектуру данных.</div></div></div>
+            <div class="path-step"><div class="path-idx"><span class="path-dot">05</span></div><div class="path-content"><div class="path-role">CDO / Партнёр</div><div class="path-time">5+ лет</div><div class="path-desc">Формируешь data-стратегию компании и клиентов.</div></div></div>
           </div>
         </div>
       </div>
