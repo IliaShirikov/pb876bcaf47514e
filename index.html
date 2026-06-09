@@ -132,18 +132,9 @@ nav{
 
 .hero-right{
   background:var(--bg);display:flex;flex-direction:column;
-  padding:100px 56px 64px 64px;position:relative;overflow:hidden;
+  padding:100px 56px 64px 64px;position:relative;
 }
-/* team photo ghost in background */
-.hero-right::after{
-  content:'';position:absolute;bottom:0;right:-20px;
-  width:88%;height:75%;
-  background:url(team.png) no-repeat bottom right;
-  background-size:contain;
-  opacity:.13;pointer-events:none;user-select:none;
-  z-index:0;
-}
-.hero-right>*{position:relative;z-index:1}
+
 .hero-big-num{
   font-family:var(--fh);font-size:clamp(80px,12vw,180px);font-weight:900;
   color:var(--border);line-height:.85;letter-spacing:-.05em;
@@ -634,6 +625,10 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 @keyframes tap-fade{0%{opacity:1}100%{opacity:0;visibility:hidden}}
 .team-photo-card{border-radius:var(--r);overflow:hidden;background:var(--bg2);flex:1;min-height:180px;display:flex;align-items:flex-end}
 .team-photo-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:var(--r)}
+
+.team-strip{position:relative;border-radius:20px;overflow:hidden;background:var(--bg2);margin:32px 0 24px;display:flex;justify-content:center;align-items:flex-end;min-height:220px}
+.team-strip img{width:auto;max-width:100%;max-height:280px;object-fit:contain;object-position:bottom center;display:block;position:relative;z-index:1}
+.team-strip-label{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;z-index:2}
 </style>
 </head>
 <body>
@@ -863,6 +858,10 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
           <div class="person"><div class="big-avatar">ВС</div><div><div class="pname">Василий С.</div><div class="prole">Консультант, практика стратегии</div></div></div>
         </div>
       </div>
+    </div>
+    <div class="team-strip r">
+      <img src="team.png" alt="Команда AXENIX" loading="lazy">
+      <div class="team-strip-label">Команда AXENIX — 2 800+ специалистов</div>
     </div>
     <div class="voices-scroll r">
       <div class="vcard"><div class="vcard-q">"</div><p class="vcard-text">«Успех на 90% определяет команда. Каждый день узнаю что-то новое в практике ресурсов.»</p><div class="vcard-person"><div class="vavatar">ЕК</div><div><div class="vname">Екатерина К.</div><div class="vrole">Аналитик · Москва</div></div></div></div>
