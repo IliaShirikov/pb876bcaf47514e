@@ -132,8 +132,22 @@ nav{
 
 .hero-right{
   background:var(--bg);display:flex;flex-direction:column;
-  padding:100px 56px 64px 64px;position:relative;
+  padding:100px 56px 64px 64px;position:relative;overflow:hidden;
 }
+.hero-office-img{
+  position:absolute;bottom:0;left:0;right:0;
+  height:52%;pointer-events:none;user-select:none;z-index:0;
+  /* arch crop at the top using clip-path ellipse */
+  clip-path:ellipse(70% 100% at 50% 100%);
+  -webkit-clip-path:ellipse(70% 100% at 50% 100%);
+}
+.hero-office-img img{
+  width:100%;height:100%;object-fit:cover;object-position:left center;
+  display:block;
+  mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.45) 20%, rgba(0,0,0,.85) 60%, rgba(0,0,0,.9) 100%);
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.45) 20%, rgba(0,0,0,.85) 60%, rgba(0,0,0,.9) 100%);
+}
+.hero-right>*:not(.hero-office-img){position:relative;z-index:1}
 
 .hero-big-num{
   font-family:var(--fh);font-size:clamp(80px,12vw,180px);font-weight:900;
@@ -669,6 +683,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
     </div>
   </div>
   <div class="hero-right">
+    <div class="hero-office-img"><img src="office.jpg" alt="" loading="lazy"></div>
     <div class="hero-big-num">30</div>
     <div class="hero-accenture-badge afr">
       <div class="badge-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
