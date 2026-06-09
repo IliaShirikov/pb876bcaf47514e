@@ -191,8 +191,8 @@ nav{
 
 /* ── KEYPOINTS ── */
 .keypoints-wrap{
-  background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:0 40px;position:relative;z-index:10;
+  background:var(--dark2);
+  padding:0 40px;position:relative;z-index:10;overflow:hidden;
 }
 .keypoints-inner{
   max-width:1140px;margin:0 auto;
@@ -200,29 +200,33 @@ nav{
   gap:0;
 }
 .kp{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:28px 0;border-right:1px solid var(--border);
-  padding-right:32px;padding-left:32px;
+  display:flex;flex-direction:column;gap:10px;
+  padding:36px 32px;
+  border-right:1px solid rgba(255,255,255,.08);
   transition:background .2s;
+  position:relative;
 }
 .kp:first-child{padding-left:0}
 .kp:last-child{border-right:none}
+.kp:hover{background:rgba(255,255,255,.04)}
 .kp-icon{
-  width:36px;height:36px;background:var(--o2);border-radius:9px;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+  width:36px;height:36px;background:var(--o);border-radius:9px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 4px 12px rgba(255,107,26,.35);
 }
-.kp-icon svg{width:18px;height:18px}
-.kp-title{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px;letter-spacing:-.01em;line-height:1.3}
-.kp-text{font-size:12.5px;color:var(--muted);line-height:1.5}
+.kp-icon svg{width:17px;height:17px}
+.kp-title{font-family:var(--fh);font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-.01em;line-height:1.3}
+.kp-text{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.55}
 @media(max-width:768px){
   .keypoints-wrap{padding:0 20px}
   .keypoints-inner{grid-template-columns:1fr 1fr}
   .kp:nth-child(2){border-right:none}
-  .kp:first-child{padding-left:0}
+  .kp:first-child{padding-left:20px}
+  .kp{border-bottom:1px solid rgba(255,255,255,.08)}
 }
 @media(max-width:480px){
   .keypoints-inner{grid-template-columns:1fr}
-  .kp{border-right:none;border-bottom:1px solid var(--border);padding:20px 0}
+  .kp{border-right:none;padding:24px 0}
   .kp:last-child{border-bottom:none}
 }
 
