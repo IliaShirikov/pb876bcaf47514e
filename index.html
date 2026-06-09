@@ -461,11 +461,27 @@ section{padding:100px 40px;position:relative}
 .form-cols{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
 .form-lside{}
 .form-lside .section-h{font-size:clamp(24px,3vw,40px)}
-.form-lside-meta{margin-top:40px;display:flex;flex-direction:column;gap:16px}
-.fmeta-item{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--bg);border-radius:var(--rs)}
-.fmeta-icon{width:36px;height:36px;background:var(--o2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.fmeta-text{font-size:13px;color:var(--muted);line-height:1.6}
-.fmeta-text strong{color:var(--dark);font-weight:600;display:block;margin-bottom:2px}
+.form-lside-meta{margin-top:44px;display:flex;flex-direction:column;gap:2px}
+.fmeta-item{
+  display:grid;grid-template-columns:56px 1fr;align-items:center;gap:0;
+  padding:20px 24px 20px 0;
+  border-bottom:1px solid var(--border);
+  transition:background .18s;
+  position:relative;
+}
+.fmeta-item:first-child{border-top:1px solid var(--border)}
+.fmeta-item:hover{background:rgba(255,107,26,.03)}
+.fmeta-item:hover .fmeta-icon{background:var(--o);box-shadow:0 6px 20px rgba(255,107,26,.35)}
+.fmeta-item:hover .fmeta-icon svg{stroke:#fff}
+.fmeta-icon{
+  width:44px;height:44px;background:var(--o2);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:all .22s;
+}
+.fmeta-text{font-size:14px;color:var(--muted);line-height:1.5;padding-left:16px}
+.fmeta-text strong{color:var(--dark);font-weight:700;font-size:15px;display:block;margin-bottom:3px;letter-spacing:-.01em}
+.fmeta-text a{color:var(--o);text-decoration:none;font-weight:600}
+.fmeta-text a:hover{text-decoration:underline}
 .form-box{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:44px}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .fg{display:flex;flex-direction:column;gap:7px}
@@ -994,16 +1010,16 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
         <p class="section-sub r" style="margin-bottom:0">Заполни форму — мы свяжемся по открытым позициям и при следующем наборе стажёров.</p>
         <div class="form-lside-meta r">
           <div class="fmeta-item">
-            <div class="fmeta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="fmeta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="fmeta-text"><strong>Быстрый ответ</strong>Команда рекрутмента свяжется в течение 3–5 дней</div>
           </div>
           <div class="fmeta-item">
-            <div class="fmeta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="fmeta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="fmeta-text"><strong>Конфиденциально</strong>Данные используются только для подбора</div>
           </div>
           <div class="fmeta-item">
-            <div class="fmeta-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-            <div class="fmeta-text"><strong>Вопросы?</strong>Пиши напрямую: info-russia@axenix.pro</div>
+            <div class="fmeta-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="fmeta-text"><strong>Вопросы?</strong>Пиши напрямую: <a href="mailto:info-russia@axenix.pro">info-russia@axenix.pro</a></div>
           </div>
         </div>
       </div>
