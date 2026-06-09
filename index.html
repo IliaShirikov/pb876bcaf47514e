@@ -571,6 +571,22 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
   .track-tabs{flex-direction:column;width:100%;border-radius:var(--rs)}
   .track-tab{border-radius:var(--rs)}
 }
+
+/* REELS */
+.reels-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:60px}
+.reel-featured,.reel-secondary{display:flex;flex-direction:column;align-items:center;gap:28px}
+.phone-frame{position:relative;width:260px;aspect-ratio:9/19.5;background:#111;border-radius:40px;box-shadow:0 0 0 8px #1a1a2e,0 0 0 10px rgba(255,255,255,.08),0 40px 80px rgba(0,0,0,.6);overflow:hidden;flex-shrink:0}
+.phone-sm{width:220px;border-radius:34px}
+.phone-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:60px;height:8px;background:#0a0a0a;border-radius:8px;z-index:10}
+.reel-badge{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);backdrop-filter:blur(8px);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.04em}
+.reel-caption{text-align:center}
+.unmute-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:8px 18px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-top:12px}
+.unmute-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.unmute-btn.active svg line{display:none}
+.unmute-btn.active svg path+path{display:none}
+.unmute-lg{font-size:14px;padding:11px 24px;background:rgba(255,107,26,.15);border-color:rgba(255,107,26,.35);color:var(--o)}
+.unmute-lg:hover{background:rgba(255,107,26,.25);color:var(--o)}
+@media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:220px}.phone-sm{width:190px}}
 </style>
 </head>
 <body>
@@ -811,6 +827,54 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
       <div class="vcard"><div class="vcard-q">"</div><p class="vcard-text">«Работаю с AI-инновациями, решаю сложные задачи в медицине и металлургии. Здесь нет скучных проектов.»</p><div class="vcard-person"><div class="vavatar">ДС</div><div><div class="vname">Дмитрий С.</div><div class="vrole">Руководитель практики Data Science</div></div></div></div>
       <div class="vcard"><div class="vcard-q">"</div><p class="vcard-text">«Привлекательное место с большими перспективами. Программы наставничества, гибкий график — как и обещали.»</p><div class="vcard-person"><div class="vavatar">СВ</div><div><div class="vname">Света В.</div><div class="vrole">Ведущий консультант · Тверь</div></div></div></div>
       <div class="vcard"><div class="vcard-q">"</div><p class="vcard-text">«Свобода для личного и командного развития в hard и soft skills — вот что ценю больше всего.»</p><div class="vcard-person"><div class="vavatar">ДН</div><div><div class="vname">Денис Н.</div><div class="vrole">Руководитель направления разработки</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LIFE / REELS -->
+<section id="life" style="background:var(--dark2);padding:100px 0;overflow:hidden">
+  <div class="inner">
+    <div class="section-label r" style="color:rgba(255,255,255,.5)">Жизнь в AXENIX</div>
+    <h2 class="section-h r" style="color:#fff">Не описание вакансии —<br><span style="color:var(--o)">настоящая жизнь</span></h2>
+    <p class="section-sub r" style="color:rgba(255,255,255,.6)">Снято внутри компании. Без режиссуры.</p>
+    <div class="reels-wrap r">
+      <!-- Reel 1: featured, larger -->
+      <div class="reel-featured">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <video src="reel1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:36px"></video>
+          <div class="reel-badge">● Жизнь команды</div>
+        </div>
+        <div class="reel-caption">
+          <div style="font-size:13px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Главный рилс</div>
+          <div style="font-size:20px;font-weight:700;color:#fff;line-height:1.3">Один день в AXENIX.<br>Настоящий.</div>
+        </div>
+      </div>
+      <!-- Reel 2: secondary -->
+      <div class="reel-secondary">
+        <div class="phone-frame phone-sm">
+          <div class="phone-notch"></div>
+          <video src="reel2.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:30px"></video>
+          <div class="reel-badge">● Команда</div>
+        </div>
+        <div class="reel-caption" style="margin-top:20px">
+          <div style="font-size:13px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">О нас</div>
+          <div style="font-size:16px;font-weight:600;color:#fff;line-height:1.3">Люди, с которыми<br>ты будешь работать</div>
+        </div>
+        <!-- unmute button -->
+        <button class="unmute-btn" onclick="toggleMute(this)" data-target="reel2.mp4" aria-label="Включить звук">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          Звук выкл
+        </button>
+      </div>
+    </div>
+    <!-- global unmute for reel1 -->
+    <div style="text-align:center;margin-top:32px">
+      <button class="unmute-btn unmute-lg" id="unmute1" onclick="toggleMute1()" aria-label="Включить звук главного видео">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        Включить звук
+      </button>
     </div>
   </div>
 </section>
@@ -1061,6 +1125,21 @@ form.addEventListener('submit',async e=>{
 });
 function showOk(){form.style.display='none';const s=document.getElementById('form-success');s.classList.add('show');s.scrollIntoView({behavior:'smooth',block:'center'})}
 form.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',()=>{el.style.borderColor='';el.style.outline=''}));
+</script>
+
+<script>
+var vid1 = null;
+function toggleMute1(){
+  if(!vid1) vid1 = document.querySelector('#life video');
+  if(!vid1) return;
+  vid1.muted = !vid1.muted;
+  var btn = document.getElementById('unmute1');
+  if(btn){
+    btn.innerHTML = vid1.muted
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg> Включить звук'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Выключить звук';
+  }
+}
 </script>
 </body>
 </html>
