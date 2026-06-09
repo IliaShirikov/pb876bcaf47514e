@@ -589,6 +589,8 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 @media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:220px}}
 .tap-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:12px;font-weight:600;padding:8px 16px;border-radius:20px;white-space:nowrap;pointer-events:none;opacity:1;animation:tap-fade 2.5s ease 1.5s forwards}
 @keyframes tap-fade{0%{opacity:1}100%{opacity:0;visibility:hidden}}
+.team-photo-card{border-radius:var(--r);overflow:hidden;background:var(--bg2);flex:1;min-height:180px;display:flex;align-items:flex-end}
+.team-photo-card img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:var(--r)}
 </style>
 </head>
 <body>
@@ -816,7 +818,9 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
           <p style="font-size:16px">«Потолок роста ограничивается только тем, сколько ты готов на себя брать и насколько реально показываешь результат.»</p>
           <div class="person"><div class="big-avatar">ВС</div><div><div class="pname">Василий С.</div><div class="prole">Консультант, практика стратегии</div></div></div>
         </div>
-
+        <div class="team-photo-card r">
+          <img src="team.jpg" alt="Команда AXENIX" loading="lazy">
+        </div>
       </div>
     </div>
     <div class="voices-scroll r">
