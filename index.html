@@ -21,14 +21,14 @@
     <div id="pw-err" style="color:#e03;font-size:13px;margin-top:10px;min-height:18px"></div>
   </div>`;
   document.documentElement.appendChild(overlay);
-  document.body.style.overflow="hidden";
+  document.documentElement.style.overflow="hidden";
   async function attempt(){
     const pw = document.getElementById("pw-input").value;
     const h = await check(pw);
     if(h===HASH){
       sessionStorage.setItem(KEY,"1");
       overlay.remove();
-      document.body.style.overflow="";
+      document.documentElement.style.overflow="";
     } else {
       document.getElementById("pw-err").textContent="Неверный пароль";
       document.getElementById("pw-input").style.borderColor="#e03";
