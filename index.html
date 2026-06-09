@@ -4,12 +4,13 @@
 <script>
 (function(){
   var KEY="axenix_auth";
+  var _fl=document.createElement("link");_fl.rel="stylesheet";_fl.href="https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap";document.head.appendChild(_fl);
   if(sessionStorage.getItem(KEY)==="ok") return;
   var ov=document.createElement("div");
   ov.id="pw-ov";
   ov.style.cssText="position:fixed;inset:0;background:#F4F2EE;z-index:99999;display:flex;align-items:center;justify-content:center";
   ov.innerHTML='<div style="text-align:center;padding:40px;max-width:360px;width:100%">'
-    +'<div style="font-size:22px;font-weight:900;color:#0D0D0D;margin-bottom:4px;letter-spacing:-.03em">AXENIX<span style="color:#FF6B1A">.</span></div>'
+    +'<div style="font-family:Unbounded,sans-serif;font-size:22px;font-weight:900;color:#0D0D0D;margin-bottom:4px;letter-spacing:-.03em">AXENIX<span style="color:#FF6B1A">.</span></div>'
     +'<div style="font-size:13px;color:#7A786F;margin-bottom:28px">Введите пароль для доступа</div>'
     +'<input id="pwi" type="password" placeholder="Пароль" style="display:block;width:100%;padding:14px 18px;border:1.5px solid #DDD9D0;border-radius:12px;font-size:15px;outline:none;background:#fff;box-sizing:border-box;margin-bottom:12px">'
     +'<button id="pwb" style="width:100%;padding:14px;background:#0D0D0D;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer">Войти</button>'
