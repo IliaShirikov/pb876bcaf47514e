@@ -340,9 +340,11 @@ section{padding:100px 40px;position:relative}
   position:relative;overflow:hidden;
 }
 .voice-big-deco{
-  position:absolute;top:-20px;right:-20px;
-  font-family:var(--fh);font-size:200px;font-weight:900;
-  color:rgba(255,255,255,.04);line-height:1;user-select:none;
+  position:absolute;bottom:-40px;right:-16px;
+  font-family:var(--fh);font-size:260px;font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.1);
+  line-height:1;user-select:none;pointer-events:none;letter-spacing:-.05em;
 }
 .voice-big p{font-size:clamp(16px,1.8vw,20px);color:#fff;line-height:1.75;font-style:italic;position:relative;z-index:1;margin-bottom:32px}
 .voice-big .person{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
@@ -877,14 +879,14 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
     
     <div class="voices-feature r">
       <div class="voice-big">
-        <div class="voice-big-deco">"</div>
-        <p>«В самом начале у меня был один на один с директором всей практики. Ему было важно лично понять, кто выходит в команду. Это сразу задало тон.»</p>
+        <div class="voice-big-deco">A</div>
+        <p>В самом начале у меня был один на один с директором всей практики. Ему было важно лично понять, кто выходит в команду. Это сразу задало тон.</p>
         <div class="person"><div class="big-avatar" style="background:none;padding:0;overflow:hidden"><img src="vasily.jpg" alt="Василий С." style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%"></div><div><div class="pname">Василий С.</div><div class="prole">Консультант, практика стратегии · Москва</div></div></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px">
         <div class="voice-big" style="flex:1">
-          <div class="voice-big-deco">"</div>
-          <p style="font-size:16px">«Потолок роста ограничивается только тем, сколько ты готов на себя брать и насколько реально показываешь результат.»</p>
+          <div class="voice-big-deco">A</div>
+          <p style="font-size:16px">Потолок роста ограничивается только тем, сколько ты готов на себя брать и насколько реально показываешь результат.</p>
           <div class="person"><div class="big-avatar" style="background:none;padding:0;overflow:hidden"><img src="vasily.jpg" alt="Василий С." style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%"></div><div><div class="pname">Василий С.</div><div class="prole">Консультант, практика стратегии</div></div></div>
         </div>
       </div>
