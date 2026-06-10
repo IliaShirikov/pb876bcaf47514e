@@ -193,8 +193,6 @@ nav{
 .keypoints-wrap{
   background:linear-gradient(100deg,#FF6B1A 0%,#e0520a 60%,#c94600 100%);
   padding:0 40px;position:relative;z-index:10;overflow:hidden;
-  border-top:3px solid var(--dark2);
-  border-bottom:3px solid var(--dark2);
 }
 .keypoints-wrap::before{
   content:'';position:absolute;inset:0;pointer-events:none;
@@ -209,7 +207,7 @@ nav{
 .kp{
   display:flex;flex-direction:column;gap:12px;
   padding:40px 32px;
-  border-right:2px solid rgba(27,45,79,.35);
+  border-right:1px solid rgba(27,45,79,.25);
   transition:background .2s;
   position:relative;
 }
@@ -232,12 +230,12 @@ nav{
   .keypoints-inner{grid-template-columns:1fr 1fr}
   .kp:nth-child(2){border-right:none}
   .kp:first-child{padding-left:20px}
-  .kp{border-bottom:2px solid rgba(27,45,79,.35)}
+  .kp{border-bottom:1px solid rgba(27,45,79,.25)}
 }
 @media(max-width:480px){
   .keypoints-wrap{padding:0}
   .keypoints-inner{grid-template-columns:1fr}
-  .kp{border-right:none;padding:24px 24px;border-bottom:2px solid rgba(27,45,79,.35)}
+  .kp{border-right:none;padding:24px 24px}
   .kp:last-child{border-bottom:none}
 }
 
