@@ -1051,7 +1051,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 </section>
 
 <!-- FORM -->
-<section id="apply-section" style="background:var(--bg)">
+<section id="apply" style="background:var(--bg);scroll-margin-top:64px">
   <div class="inner">
     <div class="form-cols">
       <div class="form-lside">
@@ -1075,7 +1075,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
       </div>
 
       <div class="form-box r">
-        <form id="apply"
+        <form id="apply-form"
           action="https://formsubmit.co/irshirikov@edu.hse.ru"
           method="POST"
           enctype="multipart/form-data">
@@ -1177,7 +1177,7 @@ function filterV(btn,cat){document.querySelectorAll('.vfbtn').forEach(b=>b.class
 function goto(sel){document.querySelector(sel)?.scrollIntoView({behavior:'smooth'})}
 
 /* FORM */
-const form=document.getElementById('apply');
+const form=document.getElementById('apply-form');
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   let ok=true;
