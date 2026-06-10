@@ -645,8 +645,8 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 /* REELS */
 .reels-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:60px}
 .reel-item{display:flex;flex-direction:column;align-items:center;gap:24px}
-.phone-frame{position:relative;width:260px;aspect-ratio:9/19.5;background:#111;border-radius:40px;box-shadow:0 0 0 8px #1a1a2e,0 0 0 10px rgba(255,255,255,.08),0 40px 80px rgba(0,0,0,.6);overflow:hidden;flex-shrink:0}
-.phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:88px;height:26px;background:#0a0a0a;border-radius:20px;z-index:10}
+.phone-frame{position:relative;width:270px;aspect-ratio:9/19.5;background:#0a0a0a;border-radius:52px;overflow:hidden;flex-shrink:0;box-shadow:0 0 0 2px #4a4a52,0 0 0 10px #2a2a35,0 0 0 12px rgba(255,255,255,.06),0 0 0 13px #1e1e28,0 50px 100px rgba(0,0,0,.7),0 20px 40px rgba(0,0,0,.4);}
+.phone-notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#000;border-radius:20px;z-index:10;box-shadow:0 0 0 1.5px #1a1a1a}
 .reel-badge{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.65);backdrop-filter:blur(8px);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.04em}
 .reel-caption{text-align:center}
 .unmute-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:8px 18px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-top:12px}
@@ -655,7 +655,7 @@ footer{background:var(--dark2);color:#fff;padding:60px 40px 44px}
 .unmute-btn.active svg path+path{display:none}
 .unmute-lg{font-size:14px;padding:11px 24px;background:rgba(255,107,26,.15);border-color:rgba(255,107,26,.35);color:var(--o)}
 .unmute-lg:hover{background:rgba(255,107,26,.25);color:var(--o)}
-@media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:220px}}
+@media(max-width:767px){.reels-wrap{grid-template-columns:1fr;gap:48px}.phone-frame{width:230px}}
 .tap-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.55);backdrop-filter:blur(6px);color:#fff;font-size:12px;font-weight:600;padding:8px 16px;border-radius:20px;white-space:nowrap;pointer-events:none;opacity:1;animation:tap-fade 2.5s ease 1.5s forwards}
 @keyframes tap-fade{0%{opacity:1}100%{opacity:0;visibility:hidden}}
 .team-photo-card{border-radius:var(--r);overflow:hidden;background:var(--bg2);flex:1;min-height:180px;display:flex;align-items:flex-end}
