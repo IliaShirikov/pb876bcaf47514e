@@ -63,7 +63,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.65;overflow-x:hidden}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+::-webkit-scrollbar-thumb{background:var(--o);border-radius:2px}
 
 /* ── NAV ── */
 nav{
@@ -79,8 +79,8 @@ nav{
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--dark)}
-.nav-cta{background:var(--dark);color:#fff;padding:10px 22px;border-radius:100px;font-weight:600;font-size:13px;text-decoration:none;transition:all .2s}
-.nav-cta:hover{background:var(--o)}
+.nav-cta{background:var(--o);color:#fff;padding:10px 22px;border-radius:100px;font-weight:600;font-size:13px;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(255,107,26,.3)}
+.nav-cta:hover{background:#e85c08;box-shadow:0 6px 20px rgba(255,107,26,.45)}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .nav-burger span{display:block;width:20px;height:1.5px;background:var(--ink);transition:all .3s}
 
@@ -210,11 +210,11 @@ nav{
 .kp:last-child{border-right:none}
 .kp:hover{background:rgba(255,255,255,.04)}
 .kp-icon{
-  width:36px;height:36px;background:var(--o);border-radius:9px;
+  width:40px;height:40px;background:rgba(255,107,26,.15);border-radius:10px;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  box-shadow:0 4px 12px rgba(255,107,26,.35);
+  border:1px solid rgba(255,107,26,.25);
 }
-.kp-icon svg{width:17px;height:17px}
+.kp-icon svg{width:18px;height:18px}
 .kp-title{font-family:var(--fh);font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-.01em;line-height:1.3}
 .kp-text{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.55}
 @media(max-width:768px){
@@ -362,7 +362,7 @@ section{padding:100px 40px;position:relative}
 
 .voices-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
 .voices-scroll::-webkit-scrollbar{height:3px}
-.voices-scroll::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.voices-scroll::-webkit-scrollbar-thumb{background:var(--o);border-radius:2px}
 .vcard{flex-shrink:0;width:300px;background:var(--bg);border:1px solid var(--border);border-radius:var(--rs);padding:26px;transition:all .22s}
 .vcard:hover{border-color:var(--border2);transform:translateY(-2px)}
 .vcard-q{font-size:28px;font-family:var(--fh);color:var(--o);line-height:.8;margin-bottom:10px}
